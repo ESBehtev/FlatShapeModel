@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A3A46FBA2CCADB680099C19F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A46FB92CCADB680099C19F /* OpenGL.framework */; };
+		A3A46FBE2CCADDE90099C19F /* libGLEW.2.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A46FBD2CCADDE90099C19F /* libGLEW.2.2.0.dylib */; };
+		A3A46FC02CCADE2E0099C19F /* libglfw.3.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A46FBF2CCADE2E0099C19F /* libglfw.3.4.dylib */; };
+		A3A46FC22CCADE470099C19F /* libglm.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A46FC12CCADE470099C19F /* libglm.dylib */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		A3A46FA62CCAD38E0099C19F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +27,10 @@
 
 /* Begin PBXFileReference section */
 		A3A46FA82CCAD38E0099C19F /* FlatShapeModel */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FlatShapeModel; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3A46FB92CCADB680099C19F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		A3A46FBD2CCADDE90099C19F /* libGLEW.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.2.0.dylib; path = ../../../../../opt/homebrew/Cellar/glew/2.2.0_1/lib/libGLEW.2.2.0.dylib; sourceTree = "<group>"; };
+		A3A46FBF2CCADE2E0099C19F /* libglfw.3.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.4.dylib; path = ../../../../../opt/homebrew/Cellar/glfw/3.4/lib/libglfw.3.4.dylib; sourceTree = "<group>"; };
+		A3A46FC12CCADE470099C19F /* libglm.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglm.dylib; path = ../../../../../opt/homebrew/Cellar/glm/1.0.1/lib/libglm.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,6 +46,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3A46FC22CCADE470099C19F /* libglm.dylib in Frameworks */,
+				A3A46FC02CCADE2E0099C19F /* libglfw.3.4.dylib in Frameworks */,
+				A3A46FBE2CCADDE90099C19F /* libGLEW.2.2.0.dylib in Frameworks */,
+				A3A46FBA2CCADB680099C19F /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				A3A46FAA2CCAD38E0099C19F /* FlatShapeModel */,
+				A3A46FB82CCADB680099C19F /* Frameworks */,
 				A3A46FA92CCAD38E0099C19F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +71,17 @@
 				A3A46FA82CCAD38E0099C19F /* FlatShapeModel */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A3A46FB82CCADB680099C19F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3A46FC12CCADE470099C19F /* libglm.dylib */,
+				A3A46FBF2CCADE2E0099C19F /* libglfw.3.4.dylib */,
+				A3A46FBD2CCADDE90099C19F /* libGLEW.2.2.0.dylib */,
+				A3A46FB92CCADB680099C19F /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +205,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -245,6 +273,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /opt/homebrew/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/glew/2.2.0_1/lib,
+					/opt/homebrew/Cellar/glfw/3.4/lib,
+					/opt/homebrew/Cellar/glm/1.0.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +288,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /opt/homebrew/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/glew/2.2.0_1/lib,
+					/opt/homebrew/Cellar/glfw/3.4/lib,
+					/opt/homebrew/Cellar/glm/1.0.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
