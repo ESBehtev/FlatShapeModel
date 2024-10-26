@@ -57,5 +57,8 @@ With this configuration, your project should be able to compile and link against
 
 Once the setup is complete, you can build and run the project directly from Xcode. Ensure that your code correctly references OpenGL, GLEW, GLFW and GLM headers, and enjoy creating and manipulating 2D shapes.
 
+## Continuation
+
+The next project demonstrates a pyramid model based on this parallelogram foundation with WASD controls for rotation. Visit the repository: [Pyramid Shape Model on GitHub](https://github.com/ESBehtev/Pyramid-Shape-Model).
 
 
